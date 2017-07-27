@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoadState">
+        <attr name="error_img" format="reference"/>
+        <attr name="error_text" format="string" />
+
+        <attr name="no_data_img" format="reference"/>
+        <attr name="no_data_text" format="string" />
+    </declare-styleable>
+</resources>
