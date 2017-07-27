@@ -23,7 +23,7 @@ public class MyColorDialog extends ColorDialog {
     }
 
     public MyColorDialog setSecondContent(String title){
-        setTitle(title);
+        setContentText(title);
         return this ;
     }
 

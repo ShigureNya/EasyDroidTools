@@ -21,7 +21,7 @@ public class MyPromptDialog extends PromptDialog {
     }
 
     public MyPromptDialog setSecondContent(String title){
-        setTitle(title);
+        setContentText(title);
         return this ;
     }
 }

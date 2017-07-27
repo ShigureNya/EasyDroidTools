@@ -29,7 +29,7 @@ import me.jimhao.eorzeautil.toast.SnackBarUtil;
  *  setContentView
  *  android-annotations
  *  ButterKnife
- *  DataBinding
+ *
  * ]
  */
 public abstract class EasyActivity extends AppCompatActivity {
