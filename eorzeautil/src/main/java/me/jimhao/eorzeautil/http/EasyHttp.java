@@ -42,7 +42,10 @@ public class EasyHttp extends Http {
 
     private static OkHttpClient client ;
     private static OkHttpClient.Builder clientBuilder ;
-    //初始化HttpClient
+
+    /**
+     * 初始化HttpClient
+     */
     private EasyHttp() {
         super();
         if(client == null){
@@ -54,7 +57,11 @@ public class EasyHttp extends Http {
         clientBuilder.writeTimeout(writeOutTime, TimeUnit.SECONDS);
         client = clientBuilder.build();
     }
-    //单例接口 提供统一访问对象
+
+    /**
+     * 单例接口 提供统一访问对象
+     * @return 实例对象
+     */
     public static EasyHttp getInstance(){
         EasyHttp mInstance = instance;
         if (mInstance == null) {
@@ -116,7 +123,7 @@ public class EasyHttp extends Http {
     }
 
     /**
-     * [Get方法]
+     * [Post方法]
      * @param url 访问接口
      * @param requestBody 请求参数
      * @param callBack 接口返回

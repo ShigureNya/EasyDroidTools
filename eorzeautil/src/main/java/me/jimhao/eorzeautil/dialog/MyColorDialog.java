@@ -17,11 +17,21 @@ public class MyColorDialog extends ColorDialog {
         super(context);
     }
 
+    /**
+     * [设置标题]
+     * @param title
+     * @return
+     */
     public MyColorDialog setTitleContent(String title){
         setTitle(title);
         return this ;
     }
 
+    /**
+     * [设置内容]
+     * @param title
+     * @return
+     */
     public MyColorDialog setSecondContent(String title){
         setContentText(title);
         return this ;
