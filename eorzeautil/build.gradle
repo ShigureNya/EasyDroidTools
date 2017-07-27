@@ -34,4 +34,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.4'
     //多彩Dialog
     compile 'com.github.andyxialm:ColorDialog:1.0.0'
+    compile 'com.squareup.okhttp3:okhttp:3.3.0'
 }

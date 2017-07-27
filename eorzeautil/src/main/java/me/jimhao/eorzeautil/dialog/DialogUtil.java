@@ -71,7 +71,6 @@ public class DialogUtil{
         public void dismiss(){
             dialog.dismiss();
         }
-
         /**
          * [构建确认提示框的Dialog]
          * @param info Dialog内容实体

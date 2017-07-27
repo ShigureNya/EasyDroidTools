@@ -2,11 +2,15 @@ package me.jimhao.eorzeaworld;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import java.util.HashMap;
+
 import butterknife.InjectView;
+import me.jimhao.eorzeautil.http.EasyHttp;
+import me.jimhao.eorzeautil.http.HttpCallBack;
+import me.jimhao.eorzeautil.log.NekoLog;
 import me.jimhao.eorzeautil.view.EasyActivity;
 import me.jimhao.eorzeautil.view.LoadStateLayout;
 
@@ -34,42 +38,22 @@ public class MainActivity extends EasyActivity {
 
     @Override
     public void doBusiness(Context mContext) {
-        new Thread(new Runnable() {
+        String url = "http://221.226.80.114:8112/HeatCloudService.svc/GetBuildingData";
+        HashMap<String,String> map = new HashMap<String,String>();
+        map.put("companyId","32011498");
+        map.put("communityId","none");
+        EasyHttp.getInstance().doGet(url, map, new HttpCallBack() {
             @Override
-            public void run() {
-                try {
-                    Thread.sleep(2000);//模拟加载过程
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            //NETWORK_ERROR     NODATA    HIDE_LAYOUT  NETWORK_LOADING
-                            empty.setDisplayMode(LoadStateLayout.NETWORK_ERROR);//错误页面
-
-//                            empty.setErrorType(EmptyView.NODATA);//空页面
-
-//                            empty.setErrorType(EmptyView.HIDE_LAYOUT);//有内容页面
-//                            billNaviLayout.setVisibility(View.Visiable);//设置为显示
-                        }
-                    });
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            public void onSuccess(String msg) {
+                NekoLog.i("测试接口请求成功",msg);
             }
-        }).start();
 
-        //点击事件
-        empty.setOnLayoutClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                empty.setDisplayMode(LoadStateLayout.NETWORK_LOADING);
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        empty.setDisplayMode(LoadStateLayout.NO_DATA);
-                    }
-                },1500);
+            public void onFailed(Throwable e) {
+                NekoLog.e("测试接口请求失败",e.getMessage());
             }
         });
+        EasyHttp.getInstance().disconnectOkHttp();
     }
 
 }
