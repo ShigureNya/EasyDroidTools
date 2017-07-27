@@ -24,4 +24,10 @@ public class MyPromptDialog extends PromptDialog {
         setContentText(title);
         return this ;
     }
+
+    public MyPromptDialog setPromptDialogType(int type){
+        setDialogType(type);
+        return this;
+    }
+
 }

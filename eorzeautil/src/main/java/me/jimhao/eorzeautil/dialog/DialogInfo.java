@@ -12,6 +12,15 @@ public class DialogInfo {
     public String title ;
     public String content ;
     public Bitmap headImage ;
+    public int dialogType ;
+
+    public int getDialogType() {
+        return dialogType;
+    }
+
+    public void setDialogType(int dialogType) {
+        this.dialogType = dialogType;
+    }
 
     public String getTitle() {
         return title;

@@ -12,7 +12,12 @@ public class DialogUtil{
     //默认通知标题
     private static final String DEFAULT_NOTIFICATION_TITLE = "通知";
     private static final String DEFAULT_NOTIFICATION_CONTENT = "内容";
-
+    //Dialog类型
+    private static final int DIALOG_SUCCESS = 3;
+    private static final int DIALOG_INFO = 0;
+    private static final int DIALOG_HELP = 1 ;
+    private static final int DIALOG_ERROR = 2 ;
+    private static final int DIALOG_WARNING = 4 ;
     /**
      * 普通Dialog的构建类
      */
@@ -82,7 +87,8 @@ public class DialogUtil{
             }
             String title = info.getTitle() != null ? info.getTitle() : DEFAULT_NOTIFICATION_TITLE;
             String content = info.getContent() != null ? info.getContent() : DEFAULT_NOTIFICATION_CONTENT ;
-            dialog.setTitleContent(title).setSecondContent(content);
+            int dialogType = info.getDialogType();
+            dialog.setTitleContent(title).setSecondContent(content).setPromptDialogType(dialogType);
             return dialog ;
         }
     }
