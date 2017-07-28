@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import me.jimhao.eorzeautil.log.EasyLog;
+import me.jimhao.eorzeautil.system.ActivityTaskManager;
 import me.jimhao.eorzeautil.toast.SnackBarUtil;
 
 /**
@@ -52,6 +53,8 @@ public abstract class EasyActivity extends AppCompatActivity {
         isDebug = EasyApplication.isDebug;
         APP_NAME = EasyApplication.appName;
         $Log(TAG + "-->onCreate()");
+        //将Activity压入Activity活动栈内
+        ActivityTaskManager.getInstance().addActivity(this);
         try {
             Bundle bundle = getIntent().getExtras();
             initParams(bundle);
@@ -186,6 +189,7 @@ public abstract class EasyActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        ActivityTaskManager.getInstance().removeActivity(this);
         $Log(TAG + "--->onDestroy()");
     }
 

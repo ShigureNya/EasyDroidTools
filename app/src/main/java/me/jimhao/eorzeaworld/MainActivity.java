@@ -3,6 +3,7 @@ package me.jimhao.eorzeaworld;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +11,6 @@ import android.widget.ImageView;
 
 import butterknife.InjectView;
 import butterknife.OnClick;
-import me.jimhao.eorzeautil.storage.EasyFile;
 import me.jimhao.eorzeautil.view.EasyActivity;
 
 public class MainActivity extends EasyActivity {
@@ -33,7 +33,6 @@ public class MainActivity extends EasyActivity {
 
     @Override
     public void initView(View view) {
-        EasyFile.FileBuilder builder = new EasyFile.FileBuilder("www");
 
     }
 
@@ -42,10 +41,15 @@ public class MainActivity extends EasyActivity {
 
     }
 
-    private float index = 1 ;
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @OnClick(R.id.btn)
     public void onViewClicked() {
+
+    }
+
+    //直接把参数交给mHelper就行了
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
     }
 
