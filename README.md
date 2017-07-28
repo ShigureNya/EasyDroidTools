@@ -30,7 +30,7 @@ compile 'com.github.ShigureNya:EasyDroidTools:1.3.7'
 |EasyActivity|Activity基类|
 |EasyFragment|Fragment基类|
 |EasyApplication|Application基类|
-***
+
 
 ### 图像处理
 
@@ -38,7 +38,7 @@ compile 'com.github.ShigureNya:EasyDroidTools:1.3.7'
 |---|:---:|
 |BitmapCompressUtil|处理图像压缩|
 |ImageBlur|处理动态模糊|
-***
+
 ### 系统工具
 
 |工具|描述|
@@ -52,7 +52,6 @@ compile 'com.github.ShigureNya:EasyDroidTools:1.3.7'
 |VoiceUtil|录音相关工具类|
 |TimeUtil|时间工具|
 
-***
 ### 视图工具
 
 |工具|描述|
@@ -61,7 +60,7 @@ compile 'com.github.ShigureNya:EasyDroidTools:1.3.7'
 |SnackBarUtil|SnackBar的快速构建类|
 |ToastUtil|吐司快速构建类|
 |LoadStateLayout|四种加载模式的Layout|
-***
+
 ### 逻辑操作
 
 工具|描述
