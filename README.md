@@ -1,7 +1,7 @@
 # Easy Droid Tools
 > 每次做项目的时候，总要Copy一大堆重复的工具类，着实麻烦。于是就有了上传一个自己常用的工具类的想法。
 
-#下载安装
+# 下载安装
 
 **Gradle**
 ```java
@@ -17,7 +17,7 @@ compile 'com.github.ShigureNya:EasyDroidTools:1.3.7'
 ```
 # 内容说明
 
-###常用工具
+### 常用工具
 
 |工具|描述|
 |---|:---:|
@@ -32,14 +32,14 @@ compile 'com.github.ShigureNya:EasyDroidTools:1.3.7'
 |EasyApplication|Application基类|
 ***
 
-###图像处理
+### 图像处理
 
 |工具|描述|
 |---|:---:|
 |BitmapCompressUtil|处理图像压缩|
 |ImageBlur|处理动态模糊|
 ***
-###系统工具
+### 系统工具
 
 |工具|描述|
 |---|:---:|
@@ -53,7 +53,7 @@ compile 'com.github.ShigureNya:EasyDroidTools:1.3.7'
 |TimeUtil|时间工具|
 
 ***
-###视图工具
+### 视图工具
 
 |工具|描述|
 |---|:---:|
@@ -62,7 +62,7 @@ compile 'com.github.ShigureNya:EasyDroidTools:1.3.7'
 |ToastUtil|吐司快速构建类|
 |LoadStateLayout|四种加载模式的Layout|
 ***
-###逻辑操作
+### 逻辑操作
 
 工具|描述
 ---|---
