@@ -17,7 +17,7 @@ compile 'com.github.ShigureNya:EasyDroidTools:1.3.7'
 ```
 
 # 内容说明
-###常用工具
+###常用工
 工具|描述
 ---|---
 EasyAnimation|动画工具类
