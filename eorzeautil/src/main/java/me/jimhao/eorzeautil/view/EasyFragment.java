@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
-import me.jimhao.eorzeautil.log.NekoLog;
+import me.jimhao.eorzeautil.log.EasyLog;
 
 /**
  * 作者： guhaoran
@@ -30,8 +30,8 @@ public abstract class EasyFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        isDebug = BaseApplication.isDebug;
-        APP_NAME = BaseApplication.appName;
+        isDebug = EasyApplication.isDebug;
+        APP_NAME = EasyApplication.appName;
     }
 
     @Override
@@ -89,7 +89,7 @@ public abstract class EasyFragment extends Fragment {
      */
     protected void $Log(String msg) {
         if (isDebug) {
-            NekoLog.d(APP_NAME, msg);
+            EasyLog.d(APP_NAME, msg);
         }
     }
 

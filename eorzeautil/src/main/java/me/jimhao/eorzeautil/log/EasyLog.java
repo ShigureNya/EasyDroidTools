@@ -8,7 +8,7 @@ import android.util.Log;
  * 包名： me.jimhao.eorzeautil.log
  * 文档描述：猫日志
  */
-public class NekoLog {
+public class EasyLog {
     public static final String module = "(。・`ω´・)";
     public static void i(String msg){
         Log.i(

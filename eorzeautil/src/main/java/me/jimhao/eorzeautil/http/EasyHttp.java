@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import me.jimhao.eorzeautil.log.NekoLog;
+import me.jimhao.eorzeautil.log.EasyLog;
 import me.jimhao.eorzeautil.storage.MD5Util;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -33,7 +33,7 @@ import static android.content.ContentValues.TAG;
  *  提供upLoad方法
  * 】
  */
-public class EasyHttp extends Http {
+public class EasyHttp extends BaseHttp {
     private static int readOutTime = 30 ;   //读取超时
     private static int connectOutTime = 15 ; //连接超时时间
     private static int writeOutTime = 60 ;  //写入超时
@@ -99,7 +99,7 @@ public class EasyHttp extends Http {
                 buffer.append("&");
             }
             url = buffer.substring(0,buffer.length()-1);
-            NekoLog.d(url);
+            EasyLog.d(url);
         }
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
@@ -109,14 +109,14 @@ public class EasyHttp extends Http {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                NekoLog.e(TAG,e.getMessage());
+                EasyLog.e(TAG,e.getMessage());
                 callBack.onFailed(new Throwable(e));
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String result = response.body().string();
-                NekoLog.i(TAG,result);
+                EasyLog.i(TAG,result);
                 callBack.onSuccess(result);
             }
         });
@@ -151,14 +151,14 @@ public class EasyHttp extends Http {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                NekoLog.e(TAG,e.getMessage());
+                EasyLog.e(TAG,e.getMessage());
                 callBack.onFailed(new Throwable(e));
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String result = response.body().string();
-                NekoLog.i(TAG,result);
+                EasyLog.i(TAG,result);
                 callBack.onSuccess(result);
             }
         });
@@ -250,7 +250,7 @@ public class EasyHttp extends Http {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                NekoLog.i(TAG,"与服务器交互失败");
+                EasyLog.i(TAG,"与服务器交互失败");
                 callBack.onError(new Throwable(e));
             }
 
@@ -258,10 +258,10 @@ public class EasyHttp extends Http {
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
                     String string = response.body().string();
-                    NekoLog.e(TAG, "上传成功：" + string);
+                    EasyLog.e(TAG, "上传成功：" + string);
                     callBack.onUPLoadSuccess(string);
                 } else {
-                    NekoLog.e(TAG,"上传失败");
+                    EasyLog.e(TAG,"上传失败");
                     callBack.onUploadFailed();
                 }
             }
@@ -310,7 +310,7 @@ public class EasyHttp extends Http {
                 call.cancel();
             }
         }
-        NekoLog.w("接口关闭成功");
+        EasyLog.w("接口关闭成功");
     }
 
 }

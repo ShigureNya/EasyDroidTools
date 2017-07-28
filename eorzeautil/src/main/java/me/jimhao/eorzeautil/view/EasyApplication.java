@@ -12,7 +12,7 @@ import android.content.pm.PackageManager;
  * 包名： me.jimhao.eorzeautil.application
  * 文档描述：基础Application类
  */
-public abstract class BaseApplication extends Application {
+public abstract class EasyApplication extends Application {
     public static boolean isDebug = true ;  //默认为true
     public static String appName = null ;
 

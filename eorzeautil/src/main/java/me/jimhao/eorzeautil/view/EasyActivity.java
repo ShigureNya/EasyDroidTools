@@ -17,7 +17,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import butterknife.ButterKnife;
-import me.jimhao.eorzeautil.log.NekoLog;
+import me.jimhao.eorzeautil.log.EasyLog;
 import me.jimhao.eorzeautil.toast.SnackBarUtil;
 
 /**
@@ -49,8 +49,8 @@ public abstract class EasyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        isDebug = BaseApplication.isDebug;
-        APP_NAME = BaseApplication.appName;
+        isDebug = EasyApplication.isDebug;
+        APP_NAME = EasyApplication.appName;
         $Log(TAG + "-->onCreate()");
         try {
             Bundle bundle = getIntent().getExtras();
@@ -233,7 +233,7 @@ public abstract class EasyActivity extends AppCompatActivity {
      */
     protected void $error(String msg) {
         if (isDebug) {
-            NekoLog.e(msg);
+            EasyLog.e(msg);
         }
     }
 

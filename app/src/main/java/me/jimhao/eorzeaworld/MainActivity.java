@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import butterknife.InjectView;
 import butterknife.OnClick;
+import me.jimhao.eorzeautil.storage.EasyFile;
 import me.jimhao.eorzeautil.view.EasyActivity;
 
 public class MainActivity extends EasyActivity {
@@ -32,6 +33,8 @@ public class MainActivity extends EasyActivity {
 
     @Override
     public void initView(View view) {
+        EasyFile.FileBuilder builder = new EasyFile.FileBuilder("www");
+
     }
 
     @Override

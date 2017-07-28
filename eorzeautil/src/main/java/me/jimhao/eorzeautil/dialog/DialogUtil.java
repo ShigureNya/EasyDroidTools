@@ -2,6 +2,8 @@ package me.jimhao.eorzeautil.dialog;
 
 import android.content.Context;
 
+import me.jimhao.eorzeautil.dialog.exception.DialogException;
+
 /**
  * 作者： guhaoran
  * 创建于： 2017/7/26

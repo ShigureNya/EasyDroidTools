@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import me.jimhao.eorzeautil.R;
+import me.jimhao.eorzeautil.toast.exception.SnackBarException;
 
 /**
  * 作者： guhaoran

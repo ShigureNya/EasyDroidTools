@@ -1,4 +1,4 @@
-package me.jimhao.eorzeautil.dialog;
+package me.jimhao.eorzeautil.dialog.exception;
 
 /**
  * 作者： guhaoran

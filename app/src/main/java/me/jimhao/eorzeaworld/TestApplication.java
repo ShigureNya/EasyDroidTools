@@ -2,7 +2,7 @@ package me.jimhao.eorzeaworld;
 
 import android.content.Context;
 
-import me.jimhao.eorzeautil.view.BaseApplication;
+import me.jimhao.eorzeautil.view.EasyApplication;
 
 /**
  * 作者： guhaoran
@@ -10,7 +10,7 @@ import me.jimhao.eorzeautil.view.BaseApplication;
  * 包名： me.jimhao.eorzeaworld
  * 文档描述：e
  */
-public class TestApplication extends BaseApplication {
+public class TestApplication extends EasyApplication {
     @Override
     public void onBusiness(Context context) {
 

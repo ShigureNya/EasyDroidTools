@@ -9,7 +9,7 @@ import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 import android.support.annotation.RequiresApi;
 
-import me.jimhao.eorzeautil.log.NekoLog;
+import me.jimhao.eorzeautil.log.EasyLog;
 
 /**
  * 作者： guhaoran
@@ -57,7 +57,7 @@ public class ImageBlur {
         Allocation tmpOut = Allocation.createFromBitmap(rs, outputBitmap);
         if(radius >= BLUR_RADIUS){
             radius = 25 ;
-            NekoLog.w("已达到最大模糊程度");
+            EasyLog.w("已达到最大模糊程度");
         }
         // 设置渲染的模糊程度, 25f是最大模糊度
         blurScript.setRadius(radius);
@@ -75,7 +75,7 @@ public class ImageBlur {
             rs.destroy();
         }
         long stopTime = System.currentTimeMillis();
-        NekoLog.e("动态模糊耗时",(stopTime-startTime)+"毫秒");
+        EasyLog.e("动态模糊耗时",(stopTime-startTime)+"毫秒");
         return outputBitmap;
     }
 }

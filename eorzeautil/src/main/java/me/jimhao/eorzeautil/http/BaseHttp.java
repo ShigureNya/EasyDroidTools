@@ -8,7 +8,7 @@ import java.util.Map;
  * 包名： me.jimhao.eorzeautil.http
  * 文档描述: Http请求类
  */
-public abstract class Http {
+public abstract class BaseHttp {
     public abstract void doGet(String url , Map<String,String> params , HttpCallBack callBack);
 
     public abstract void doPost(String url , Map<String,String> params , HttpCallBack callBack);
