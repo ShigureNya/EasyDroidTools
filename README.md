@@ -1,6 +1,10 @@
 # Easy Droid Tools
 > 每次做项目的时候，总要Copy一大堆重复的工具类，着实麻烦。于是就有了上传一个自己常用的工具类的想法。
 
+# 特性
+> - 非常快捷的网络请求和文件操作
+- 封装了开发中很常用的工具类和方法
+
 # 下载安装
 
 **Gradle**
@@ -68,3 +72,72 @@ compile 'com.github.ShigureNya:EasyDroidTools:1.3.7'
 |JsonBuilder|Json构建工具|
 |JsonParse|Json解析工具|
 |MD5Util|将字符串转换为MD5编码|
+
+# 使用方法
+### 全局异常捕获
+
+```java 
+//让Application直接继承EasyApplication即可
+
+//或者在Application中初始化CrashHandlerUtil
+public class TestApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        CrashHandlerUtil util = CrashHandlerUtil.getInstance();
+        util.setCrashTip("程序出现异常！");
+        util.init(getApplicationContext());
+    }
+}
+```
+
+### LoadStateLayout 让Activity实现加载中、无数据、加载失败、加载成功
+首先需要将View附加在Layout文件之中
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="me.jimhao.eorzeaworld.MainActivity">
+    <!-- 注意需要使用层叠类型的布局 -->
+    <me.jimhao.eorzeautil.view.LoadStateLayout
+        android:id="@+id/state"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </me.jimhao.eorzeautil.view.LoadStateLayout>
+</RelativeLayout>
+```
+使用setDisplayMode切换显示状态
+```java
+setDisplayMode(type);
+```
+### Activity栈管理
+```java
+//直接继承EasyActivity，内部实现了添加栈和弹出栈的功能
+
+//在Activity中使用ActivityTaskManager
+public class TestActivity extends Activity {
+    @Override
+    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
+        super.onCreate(savedInstanceState, persistentState);
+        //在onCreate时压入栈
+        ActivityTaskManager.getInstance().addActivity(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //在销毁的时候弹出栈
+        ActivityTaskManager.getInstance().removeActivity(this);
+    }
+}
+```
+软件完全退出
+```java 
+ActivityTaskManager.getInstance().byebye();
+```
+
+
