@@ -16,7 +16,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import butterknife.ButterKnife;
 import me.jimhao.eorzeautil.log.EasyLog;
 import me.jimhao.eorzeautil.system.ActivityTaskManager;
 import me.jimhao.eorzeautil.toast.SnackBarUtil;
@@ -75,7 +74,7 @@ public abstract class EasyActivity extends AppCompatActivity {
                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             }
             $Log("initView");
-            ButterKnife.inject(this);
+//            ButterKnife.inject(this);
             initView(mContextView);
             $Log("doBusiness");
             doBusiness(this);

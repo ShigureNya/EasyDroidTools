@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.ButterKnife;
 import me.jimhao.eorzeautil.log.EasyLog;
 
 /**
@@ -39,7 +38,7 @@ public abstract class EasyFragment extends Fragment {
                              Bundle savedInstanceState) {
         initParams(getArguments());
         mContextView = inflater.inflate(bindLayout(), container, false);
-        ButterKnife.inject(this, mContextView);
+//        ButterKnife.inject(this, mContextView);
         initView(mContextView);
         doBusiness(getActivity());
         return mContextView;
@@ -48,7 +47,7 @@ public abstract class EasyFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        ButterKnife.reset(this);
+//        ButterKnife.reset(this);
     }
 
     /**
