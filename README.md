@@ -154,7 +154,7 @@ ActivityTaskManager.getInstance().byebye();
 # TODO
 > 接下来可能会加一些Socket方面的工具类，还有Adapter的封装基类什么的
 
-#License
+# License
 
 > MIT License
 Copyright (c) [2017] [EDT]
