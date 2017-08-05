@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/EasyDroidTools.iml" filepath="$PROJECT_DIR$/EasyDroidTools.iml" />
       <module fileurl="file://$PROJECT_DIR$/EorzeaWorld.iml" filepath="$PROJECT_DIR$/EorzeaWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eorzeautil/eorzeautil.iml" filepath="$PROJECT_DIR$/eorzeautil/eorzeautil.iml" />
       <module fileurl="file://$PROJECT_DIR$/eorzeautil/eorzeautil.iml" filepath="$PROJECT_DIR$/eorzeautil/eorzeautil.iml" />
     </modules>
   </component>
